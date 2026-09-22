@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=no">
+<meta name="theme-color" content="#faf6ec">
+<meta name="description" content="Ammar Charef — Auto Electrician">
+<title>Ammar Charef — Auto Electrician</title>
+
+<!-- 🚀 تحسينات الأداء -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23b8935a'>⚡</text></svg>">
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+
+<style>
+/* ============================================================
+   🎨 اللوحة الكلاسيكية — محسّنة
+   ============================================================ */
+:root {
+    --bg-0: #f4ede0;
+    --bg-1: #faf6ec;
+    --bg-2: #f0e8d6;
+    --bg-3: #e8dec5;
+
+    --gold: #b8935a;
+    --gold-light: #d4b678;
+    --gold-bright: #e8cd92;
+    --gold-dark: #8a6d3e;
+    --gold-deep: #5c4828;
+
+    --text-main: #2d2419;
+    --text-sub: #5c5040;
+    --text-muted: #8b7f6b;
+    --text-faint: #b5a98e;
+
+    --border: rgba(184, 147, 90, 0.25);
+    --border-strong: rgba(184, 147, 90, 0.5);
+    --border-faint: rgba(184, 147, 90, 0.12);
+
+    --shadow-sm: 0 2px 8px rgba(92, 72, 40, 0.06);
+    --shadow-md: 0 10px 30px rgba(92, 72, 40, 0.1);
+    --shadow-lg: 0 30px 80px rgba(92, 72, 40, 0.15);
+
+    --font-serif: 'Cormorant Garamond', 'Cairo', Georgia, serif;
+    --font-sans: 'Cairo', system-ui, sans-serif;
+    --font-mono: 'Inter', ui-monospace, monospace;
+
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-slow: cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-fade: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --ease-wave: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root[data-theme="dark"] {
+    --bg-0: #0a0806;
+    --bg-1: #12100d;
+    --bg-2: #1a1714;
+    --bg-3: #232019;
+
+    --gold: #c9a86a;
+    --gold-light: #e6d4a8;
+    --gold-bright: #f4e4be;
+    --gold-dark: #8b7548;
+    --gold-deep: #5c4d2e;
+
+    --text-main: #ebe4d7;
+    --text-sub: #a89c85;
+    --text-muted: #6b6252;
+    --text-faint: #3a362f;
+
+    --border: rgba(201, 168, 106, 0.2);
+    --border-strong: rgba(201, 168, 106, 0.4);
+    --border-faint: rgba(201, 168, 106, 0.1);
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--bg-1);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background 0.5s var(--ease), color 0.5s var(--ease);
+}
+
+/* 🚀 خط ذهبي علوي */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--gold) 20%,
+        var(--gold-bright) 50%,
+        var(--gold) 80%,
+        transparent 100%);
+    z-index: 10000;
+    opacity: 0.7;
+}
+
+/* ============================================================
+   🎯 شاشة الدخول الجديدة — زر واحد فقط
+   ============================================================ */
+#entryScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--bg-1);
+    overflow: hidden;
+    transition: opacity 1s var(--ease-fade);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#entryScreen.fading {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* إطار كلاسيكي */
+.frame-outer {
+    position: absolute;
+    inset: 20px;
+    border: 1px solid var(--border);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.frame-outer::before {
+    content: '';
+    position: absolute;
+    top: -1px; right: -1px;
+    width: 40px; height: 40px;
+    border-top: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+}
+
+.frame-outer::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: -1px;
+    width: 40px; height: 40px;
+    border-bottom: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+}
+
+/* الجزيئات الذهبية */
+.gold-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.gold-particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--gold);
+    opacity: 0;
+    animation: floatUp linear infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(0) translateX(0); }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.6; }
+    100% { opacity: 0; transform: translateY(-100vh) translateX(40px); }
+}
+
+/* محتوى الدخول */
+.entry-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* الشعار ⚡ */
+.entry-crest {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: crestIn 1.4s var(--ease-slow) 0.1s forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes crestIn {
+    from { opacity: 0; transform: scale(0.85) rotate(-8deg); }
+    to { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+.entry-crest svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.entry-crest .rot-outer {
+    animation: rotateSlow 50s linear infinite;
+    transform-origin: 50px 50px;
+}
+
+.entry-crest .rot-inner {
+    animation: rotateSlow 35s linear infinite reverse;
+    transform-origin: 50px 50px;
+}
+
+@keyframes rotateSlow {
+    to { transform: rotate(360deg); }
+}
+
+/* العنوان */
+.entry-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.8rem, 10vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 1.2s var(--ease-slow) 0.4s forwards;
+}
+
+.entry-title em {
+    font-style: italic;
+    color: var(--gold-dark);
+    font-weight: 500;
+}
+
+/* فاصل */
+.entry-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 1.2s var(--ease-slow) 0.6s forwards;
+}
+
+.ornament-line {
+    width: 70px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.ornament-diamond {
+    width: 8px;
+    height: 8px;
+    border: 1.5px solid var(--gold);
+    transform: rotate(45deg);
+    background: var(--bg-1);
+    position: relative;
+}
+
+.ornament-diamond::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--gold);
+}
+
+/* السطر الفرعي */
+.entry-tagline {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--text-sub);
+    margin-bottom: 64px;
+    padding-right: 0.5em;
+    opacity: 0;
+    animation: fadeUp 1.2s var(--ease-slow) 0.8s forwards;
+}
+
+/* 🎯 الزر الوحيد */
+.follow-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 56px 22px 48px;
+    background: transparent;
+    border: 1.5px solid var(--gold);
+    color: var(--gold-dark);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    transition: all 0.5s var(--ease);
+    opacity: 0;
+    animation: fadeUp 1.2s var(--ease-slow) 1s forwards;
+    box-shadow: 0 0 0 0 rgba(184, 147, 90, 0);
+    will-change: transform, box-shadow;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.follow-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(184, 147, 90, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.9s var(--ease);
+    pointer-events: none;
+}
+
+.follow-button::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 1px solid var(--gold);
+    opacity: 0;
+    transition: opacity 0.5s var(--ease), inset 0.5s var(--ease);
+    pointer-events: none;
+}
+
+/* الحلقات الموجية */
+.follow-button .wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid var(--gold);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.follow-button.wave-active .wave {
+    animation: waveExpand 1.2s var(--ease-wave) forwards;
+}
+
+.follow-button.wave-active .wave:nth-child(2) { animation-delay: 0.15s; }
+.follow-button.wave-active .wave:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes waveExpand {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+    }
+}
+
+.follow-button span,
+.follow-button i {
+    position: relative;
+    z-index: 1;
+}
+
+.follow-button i {
+    font-size: 0.85rem;
+    color: var(--gold);
+    transition: all 0.5s var(--ease);
+}
+
+.follow-button:hover {
+    background: var(--gold);
+    color: var(--bg-1);
+    box-shadow: 0 15px 50px rgba(184, 147, 90, 0.35);
+}
+
+.follow-button:hover::before { transform: translateX(100%); }
+.follow-button:hover::after { opacity: 1; inset: -10px; }
+
+.follow-button:hover i {
+    color: var(--bg-1);
+    transform: translateX(-8px);
+}
+
+.follow-button:active {
+    transform: scale(0.97);
+}
+
+/* تلميح */
+.entry-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    padding-right: 0.4em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeUp 1.2s var(--ease-slow) 1.4s forwards;
+}
+
+.entry-hint .pulse-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.6); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   الشاشة الرئيسية
+   ============================================================ */
+#mainScreen {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s var(--ease-fade);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+#mainScreen.revealing {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* خطوط جانبية (تُخفى على الجوال) */
+.side-rail, .side-rail-right {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+    z-index: 100;
+}
+
+.side-rail { left: 0; }
+.side-rail-right { right: 0; }
+
+.side-rail::before,
+.side-rail::after {
+    content: '';
+    position: absolute;
+    left: -3px;
+    width: 7px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.side-rail::before { top: 15%; }
+.side-rail::after { bottom: 15%; }
+
+/* الهيدر */
+.site-header {
+    padding: 36px 56px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 50;
+    direction: ltr;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-crest {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+}
+
+.brand-crest svg { width: 100%; height: 100%; display: block; }
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    direction: ltr;
+    text-align: left;
+}
+
+.brand-mark {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--gold-dark);
+    line-height: 1;
+    unicode-bidi: embed;
+}
+
+.brand-name {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1;
+    unicode-bidi: embed;
+    padding-right: 0.4em;
+}
+
+.header-nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    direction: ltr;
+}
+
+.nav-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: var(--bg-1);
+    color: var(--text-sub);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    transition: all 0.35s var(--ease);
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    -webkit-tap-highlight-color: transparent;
+    will-change: transform;
+}
+
+.nav-icon:hover {
+    border-color: var(--gold);
+    color: var(--bg-1);
+    background: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(184, 147, 90, 0.3);
+}
+
+.nav-icon:active { transform: scale(0.94); }
+
+.nav-icon i {
+    transition: transform 0.4s var(--ease);
+    display: inline-block;
+    pointer-events: none;
+}
+
+.nav-icon.lang-rotate i {
+    animation: langSpin 0.6s var(--ease) forwards;
+}
+
+@keyframes langSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.nav-icon.theme-shine::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold-bright) 0%, transparent 60%);
+    opacity: 0;
+    pointer-events: none;
+    animation: themeShine 0.7s var(--ease) forwards;
+    z-index: -1;
+}
+
+@keyframes themeShine {
+    0% { transform: scale(0.5); opacity: 0.9; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+.qr-wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.nav-icon.qr-wave-active .qr-wave {
+    animation: qrWaveExpand 0.8s var(--ease-wave) forwards;
+}
+
+.nav-icon.qr-wave-active .qr-wave:nth-child(2) { animation-delay: 0.1s; }
+.nav-icon.qr-wave-active .qr-wave:nth-child(3) { animation-delay: 0.2s; }
+
+@keyframes qrWaveExpand {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}
+
+.nav-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 50%;
+    transform: translateX(50%) translateY(-4px);
+    background: var(--text-main);
+    color: var(--bg-1);
+    padding: 6px 14px;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s var(--ease);
+    padding-right: calc(14px + 0.25em);
+    box-shadow: var(--shadow-md);
+    z-index: 200;
+}
+
+.nav-icon:hover::after {
+    opacity: 1;
+    transform: translateX(50%) translateY(0);
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 56px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* الصورة */
+.portrait {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    margin-bottom: 42px;
+}
+
+.portrait-frame {
+    position: absolute;
+    inset: -20px;
+    border: 1px solid var(--border);
+    pointer-events: none;
+    transition: all 0.5s var(--ease);
+}
+
+.portrait-frame::before,
+.portrait-frame::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--gold);
+}
+
+.portrait-frame::before {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.portrait-frame::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+}
+
+.portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: sepia(0.15) contrast(1.04) brightness(0.98);
+    transition: all 0.6s var(--ease);
+    position: relative;
+    z-index: 1;
+    border: 4px solid var(--bg-1);
+    box-shadow: var(--shadow-md);
+    will-change: transform;
+}
+
+.portrait:hover .portrait-img {
+    filter: sepia(0.05) contrast(1.08) brightness(1);
+    transform: scale(1.03);
+    box-shadow: 0 20px 60px rgba(184, 147, 90, 0.25);
+}
+
+.portrait:hover .portrait-frame {
+    inset: -28px;
+    border-color: var(--border-strong);
+}
+
+.portrait-ring {
+    position: absolute;
+    inset: -32px;
+    border-radius: 50%;
+    border: 1px dashed var(--border);
+    animation: ringRotate 60s linear infinite;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.portrait-ring-2 {
+    position: absolute;
+    inset: -44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-faint);
+    animation: ringRotate 90s linear infinite reverse;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+@keyframes ringRotate { to { transform: rotate(360deg); } }
+
+/* الاسم */
+.name {
+    font-family: var(--font-serif);
+    font-size: clamp(2.6rem, 7.5vw, 4.6rem);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+}
+
+.name em {
+    font-style: italic;
+    color: var(--gold-dark);
+    font-weight: 500;
+}
+
+.tagline {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--text-sub);
+    margin-bottom: 56px;
+    padding-right: 0.5em;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    justify-content: center;
+}
+
+.tagline::before,
+.tagline::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+}
+
+/* شبكة البطاقات */
+.links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1.5px solid var(--border-strong);
+    max-width: 760px;
+    width: 100%;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+}
+
+.links::before,
+.links::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--gold);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.links::before {
+    top: -3px;
+    right: -3px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.links::after {
+    bottom: -3px;
+    left: -3px;
+    border-right: none;
+    border-top: none;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 30px;
+    background: var(--bg-1);
+    color: var(--text-main);
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.4s var(--ease);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 82px;
+    -webkit-tap-highlight-color: transparent;
+    will-change: transform;
+}
+
+.link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--bg-2), var(--bg-3));
+    opacity: 0;
+    transition: opacity 0.4s var(--ease);
+    pointer-events: none;
+}
+
+.link:hover::before,
+.link:active::before { opacity: 1; }
+
+.link:hover {
+    color: var(--gold-dark);
+    z-index: 2;
+}
+
+.link-content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+.link-icon {
+    font-size: 1.15rem;
+    width: 24px;
+    text-align: center;
+    color: var(--gold);
+    transition: all 0.4s var(--ease);
+    pointer-events: none;
+}
+
+.link:hover .link-icon {
+    transform: scale(1.2) rotate(-5deg);
+    color: var(--gold-dark);
+}
+
+.link-text {
+    font-weight: 600;
+    color: inherit;
+    pointer-events: none;
+}
+
+.link-arrow {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    transition: all 0.4s var(--ease);
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.link:hover .link-arrow {
+    color: var(--gold-dark);
+    transform: translateX(-8px);
+}
+
+.link-number {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--text-faint);
+    transition: color 0.4s var(--ease);
+    direction: ltr;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.link:hover .link-number { color: var(--gold-dark); }
+
+body.mobile-mode .link-phone { display: none; }
+
+/* الفوتر */
+.site-footer {
+    padding: 26px 56px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    direction: ltr;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-center {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    direction: ltr;
+}
+
+.footer-heart {
+    color: var(--gold-dark);
+    font-size: 0.72rem;
+}
+
+.footer-sep {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.5;
+}
+
+/* ============================================================
+   المودال
+   ============================================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(45, 36, 25, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s var(--ease), visibility 0.5s var(--ease);
+    z-index: 1000;
+    padding: 20px;
+}
+
+:root[data-theme="dark"] .modal-overlay {
+    background: rgba(6, 5, 4, 0.94);
+}
+
+.modal-overlay.active { opacity: 1; visibility: visible; }
+
+.modal-box {
+    background: var(--bg-1);
+    border: 1.5px solid var(--border-strong);
+    padding: 52px 44px;
+    text-align: center;
+    box-shadow: 0 40px 120px rgba(92, 72, 40, 0.35);
+    max-width: 460px;
+    width: 100%;
+    position: relative;
+    transform: scale(0.94) translateY(10px);
+    opacity: 0;
+    transition: transform 0.6s var(--ease-slow), opacity 0.6s var(--ease);
+}
+
+.modal-overlay.active .modal-box {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.modal-box::before,
+.modal-box::after {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--gold);
+}
+
+.modal-box::before {
+    top: -2px;
+    right: -2px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.modal-box::after {
+    bottom: -2px;
+    left: -2px;
+    border-right: none;
+    border-top: none;
+}
+
+.modal-icon {
+    font-size: 2rem;
+    color: var(--gold-dark);
+    margin-bottom: 24px;
+    display: block;
+}
+
+.modal-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    padding-right: 0.5em;
+}
+
+.modal-value {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-main);
+    padding: 22px 20px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    margin-bottom: 26px;
+    direction: ltr;
+    text-align: center;
+    user-select: all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: 16px 22px;
+    border: 1.5px solid var(--border-strong);
+    background: transparent;
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s var(--ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-right: calc(22px + 0.4em);
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.modal-btn:hover {
+    border-color: var(--gold-dark);
+    background: var(--gold);
+    color: var(--bg-1);
+}
+
+.modal-btn.primary {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--bg-1);
+}
+
+.modal-btn.primary:hover {
+    background: var(--gold-dark);
+    border-color: var(--gold-dark);
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--border);
+    background: var(--bg-1);
+    color: var(--text-sub);
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s var(--ease);
+    border-radius: 50%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.modal-close:hover {
+    border-color: var(--gold-dark);
+    background: var(--gold);
+    color: var(--bg-1);
+    transform: rotate(90deg);
+}
+
+/* QR */
+.qr-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+}
+
+.qr-frame {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid var(--border-strong);
+    box-shadow: 0 20px 50px rgba(92, 72, 40, 0.15);
+    margin: 0 auto;
+}
+
+.qr-frame::before,
+.qr-frame::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--gold);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.qr-frame::before {
+    top: -2px;
+    right: -2px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.qr-frame::after {
+    bottom: -2px;
+    left: -2px;
+    border-right: none;
+    border-top: none;
+}
+
+.qr-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    image-rendering: pixelated;
+}
+
+.qr-caption {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold-dark);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.qr-caption-sub {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 5px;
+    padding-right: 0.4em;
+}
+
+/* نموذج التواصل */
+.contact-box {
+    max-width: 560px;
+    padding: 46px 38px;
+    text-align: right;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+.contact-header .modal-label { margin-bottom: 10px; }
+
+.contact-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-main);
+}
+
+.form-field { margin-bottom: 22px; }
+
+.form-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    padding-right: 0.4em;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 16px 18px;
+    background: var(--bg-1);
+    border: 1.5px solid var(--border);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    outline: none;
+    transition: all 0.4s var(--ease);
+    border-radius: 0;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: var(--gold);
+    background: var(--bg-2);
+    box-shadow: 0 0 0 3px rgba(184, 147, 90, 0.1);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.form-input.error,
+.form-textarea.error { border-color: #a14545; }
+
+.form-error {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #a14545;
+    margin-top: 8px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s var(--ease);
+    padding-right: 0.3em;
+}
+
+.form-error.show { height: auto; opacity: 1; }
+
+.submit-btn {
+    width: 100%;
+    padding: 20px;
+    background: var(--gold);
+    border: 1.5px solid var(--gold);
+    color: var(--bg-1);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s var(--ease);
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding-right: calc(20px + 0.5em);
+    box-shadow: 0 10px 30px rgba(184, 147, 90, 0.3);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.submit-btn.shake {
+    animation: submitShake 0.35s var(--ease);
+}
+
+@keyframes submitShake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-4px); }
+    40% { transform: translateX(4px); }
+    60% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: var(--gold-dark);
+    border-color: var(--gold-dark);
+    box-shadow: 0 15px 40px rgba(184, 147, 90, 0.45);
+}
+
+.submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--bg-1);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Toast */
+.toast {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: var(--text-main);
+    color: var(--bg-1);
+    padding: 18px 36px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all 0.5s var(--ease);
+    z-index: 5000;
+    pointer-events: none;
+    box-shadow: 0 20px 60px rgba(92, 72, 40, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-right: calc(36px + 0.4em);
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast.error {
+    background: #a14545;
+    color: #fff;
+}
+
+/* ============================================================
+   🌊 الزر الذهبي العائم
+   ============================================================ */
+.phone-fab {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 95;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
+body.mobile-mode .phone-fab { display: flex; }
+
+.phone-fab-main {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: var(--bg-1);
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(184, 147, 90, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s var(--ease);
+    position: relative;
+    z-index: 3;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.phone-fab-main i {
+    transition: transform 0.4s var(--ease);
+    pointer-events: none;
+}
+
+.phone-fab.open .phone-fab-main {
+    background: linear-gradient(135deg, #c45050, #a14545);
+    color: #fff;
+    transform: scale(0.95);
+}
+
+.phone-fab.open .phone-fab-main i {
+    transform: rotate(135deg);
+}
+
+.phone-fab-main:active { transform: scale(0.9); }
+
+.wave-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.phone-fab.open .wave-ring {
+    animation: waveExpand 1s var(--ease-wave) forwards;
+}
+
+.phone-fab.open #waveRing1 { animation-delay: 0s; }
+.phone-fab.open #waveRing2 { animation-delay: 0.15s; }
+.phone-fab.open #waveRing3 { animation-delay: 0.3s; }
+
+.phone-fab-actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.phone-action-btn {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--bg-1);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translate(0, 0) scale(0.3);
+    pointer-events: none;
+    box-shadow: 0 4px 16px rgba(92, 72, 40, 0.25);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.phone-action-btn i {
+    font-size: 0.9rem;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.phone-action-btn span {
+    font-size: 0.48rem;
+    margin-top: 2px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.phone-fab.open .phone-action-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.phone-fab.open .phone-copy-btn {
+    transform: translate(-4px, -72px) scale(1);
+    transition-delay: 0.3s;
+}
+
+.phone-fab.open .phone-call-btn {
+    transform: translate(56px, -54px) scale(1);
+    transition-delay: 0.4s;
+}
+
+.phone-copy-btn {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+}
+
+.phone-call-btn {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border: 2px solid var(--bg-1);
+}
+
+/* ============================================================
+   ✨ شاشة الانتقال السينمائي
+   ============================================================ */
+.transition-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.transition-screen.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.transition-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                border-radius 0.5s ease 0.2s;
+    z-index: 1;
+    will-change: transform;
+}
+
+.transition-screen.active .transition-bg {
+    transform: translate(-50%, -50%) scale(50);
+    border-radius: 0;
+}
+
+.transition-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    transform: scale(0.85);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s,
+                opacity 0.4s ease 0.4s;
+}
+
+.transition-screen.active .transition-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.transition-icon {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.transition-icon i {
+    font-size: 3.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+}
+
+.transition-name {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding-right: 0.6em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease 0.6s, transform 0.4s ease 0.6s;
+}
+
+.transition-screen.active .transition-name {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.transition-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    padding-right: 0.4em;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.8s;
+}
+
+.transition-screen.active .transition-status {
+    opacity: 1;
+}
+
+.loading-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ffffff;
+    opacity: 0.4;
+    animation: dotBounce 0.9s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(1) { animation-delay: 0s; }
+.loading-dot:nth-child(2) { animation-delay: 0.12s; }
+.loading-dot:nth-child(3) { animation-delay: 0.24s; }
+
+@keyframes dotBounce {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.4); opacity: 1; }
+}
+
+.transition-screen[data-platform="facebook"] .transition-bg {
+    background: linear-gradient(135deg, #1877f2, #0a4da8);
+}
+
+.transition-screen[data-platform="instagram"] .transition-bg {
+    background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+.transition-screen[data-platform="whatsapp"] .transition-bg {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.transition-screen[data-platform="telegram"] .transition-bg {
+    background: linear-gradient(135deg, #24a1de, #0088cc);
+}
+
+/* ============================================================
+   الاستجابة — الجوال
+   ============================================================ */
+@media (max-width: 768px) {
+    .frame-outer { inset: 12px; }
+    .frame-outer::before,
+    .frame-outer::after { width: 28px; height: 28px; }
+
+    .entry-content { padding: 24px; }
+    .entry-crest { width: 76px; height: 76px; margin-bottom: 32px; }
+    .entry-tagline { font-size: 0.62rem; letter-spacing: 0.4em; margin-bottom: 52px; }
+
+    .follow-button {
+        padding: 20px 40px 20px 32px;
+        font-size: 0.75rem;
+        letter-spacing: 0.5em;
+    }
+
+    .entry-hint { bottom: 24px; font-size: 0.52rem; }
+
+    .side-rail, .side-rail-right { display: none; }
+
+    .site-header { padding: 20px 20px 10px; gap: 10px; }
+    .brand-crest { width: 34px; height: 34px; }
+    .brand-mark { font-size: 0.9rem; }
+    .brand-name { font-size: 0.48rem; letter-spacing: 0.3em; }
+    .brand { gap: 10px; }
+    .nav-icon { width: 38px; height: 38px; font-size: 0.78rem; }
+    .nav-icon::after { display: none; }
+
+    .main-content { padding: 16px 18px 40px; }
+    .portrait { width: 120px; height: 120px; margin-bottom: 30px; }
+    .portrait-frame { inset: -12px; }
+    .portrait-frame::before,
+    .portrait-frame::after { width: 18px; height: 18px; }
+    .portrait-ring { inset: -20px; }
+    .portrait-ring-2 { display: none; }
+
+    .tagline {
+        font-size: 0.58rem;
+        letter-spacing: 0.38em;
+        margin-bottom: 36px;
+    }
+    .tagline::before, .tagline::after { width: 18px; }
+
+    .links {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .link {
+        padding: 20px 22px;
+        font-size: 0.9rem;
+        min-height: 68px;
+    }
+    .link-content { gap: 14px; }
+    .link-icon { font-size: 1rem; }
+    .link-number { font-size: 0.52rem; top: 10px; left: 12px; }
+
+    .site-footer {
+        padding: 22px 20px 30px;
+        font-size: 0.52rem;
+        letter-spacing: 0.22em;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .modal-box { padding: 42px 26px; }
+    .modal-value { font-size: 1.15rem; padding: 18px 16px; }
+
+    .qr-frame { width: 190px; height: 190px; padding: 10px; }
+    .qr-frame::before,
+    .qr-frame::after { width: 14px; height: 14px; }
+    .qr-caption { font-size: 0.9rem; }
+    .qr-caption-sub { font-size: 0.52rem; letter-spacing: 0.32em; }
+
+    .contact-box { padding: 38px 24px; }
+    .contact-header h2 { font-size: 1.6rem; }
+
+    .toast {
+        top: 16px;
+        padding: 14px 24px;
+        font-size: 0.58rem;
+        letter-spacing: 0.28em;
+        padding-right: calc(24px + 0.28em);
+    }
+
+    .transition-icon { width: 100px; height: 100px; }
+    .transition-icon i { font-size: 2.6rem; }
+    .transition-name { font-size: 0.85rem; letter-spacing: 0.5em; }
+    .transition-status { font-size: 0.58rem; }
+}
+
+/* شاشات عريضة */
+@media (min-width: 1200px) {
+    .main-content { padding: 36px 76px; }
+    .links { max-width: 800px; }
+}
+
+/* تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     🎯 شاشة الدخول — زر واحد فقط
+     ═══════════════════════════════════════════════════════════ -->
+<div id="entryScreen">
+    <div class="frame-outer"></div>
+    <div class="gold-particles" id="goldParticles"></div>
+
+    <div class="entry-content">
+        <!-- الشعار ⚡ -->
+        <div class="entry-crest">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#d4b678"/>
+                        <stop offset="50%" stop-color="#b8935a"/>
+                        <stop offset="100%" stop-color="#8a6d3e"/>
+                    </linearGradient>
+                </defs>
+                <g class="rot-outer">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.7"/>
+                    <circle cx="50" cy="4" r="2" fill="url(#goldGrad)"/>
+                    <circle cx="50" cy="96" r="2" fill="url(#goldGrad)"/>
+                    <circle cx="4" cy="50" r="2" fill="url(#goldGrad)"/>
+                    <circle cx="96" cy="50" r="2" fill="url(#goldGrad)"/>
+                </g>
+                <g class="rot-inner">
+                    <circle cx="50" cy="50" r="36" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.7"/>
+                </g>
+                <path d="M 54 22 L 38 52 L 48 52 L 46 78 L 62 48 L 52 48 Z" 
+                      fill="url(#goldGrad)" 
+                      stroke="url(#goldGrad)" 
+                      stroke-width="0.8" 
+                      stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <!-- العنوان -->
+        <h1 class="entry-title">Auto <em>Electrician</em></h1>
+
+        <!-- الفاصل -->
+        <div class="entry-ornament">
+            <div class="ornament-line"></div>
+            <div class="ornament-diamond"></div>
+            <div class="ornament-line"></div>
+        </div>
+
+        <!-- السطر الفرعي -->
+        <div class="entry-tagline">Constantine · Algeria</div>
+
+        <!-- 🎯 الزر الوحيد -->
+        <button class="follow-button" id="followButton">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <span>تابع</span>
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="entry-hint">
+            <span class="pulse-dot"></span>
+            <span>اضغط للمتابعة</span>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     الشاشة الرئيسية
+     ═══════════════════════════════════════════════════════════ -->
+<div id="mainScreen">
+
+    <div class="side-rail"></div>
+    <div class="side-rail-right"></div>
+
+    <header class="site-header">
+        <div class="brand">
+            <div class="brand-crest">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#d4b678"/>
+                            <stop offset="100%" stop-color="#b8935a"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="url(#goldGrad2)" stroke-width="1.5"/>
+                    <circle cx="50" cy="50" r="38" fill="none" stroke="url(#goldGrad2)" stroke-width="0.8" opacity="0.6"/>
+                    <path d="M 54 22 L 38 52 L 48 52 L 46 78 L 62 48 L 52 48 Z" 
+                          fill="url(#goldGrad2)" 
+                          stroke="url(#goldGrad2)" 
+                          stroke-width="0.5" 
+                          stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="brand-text">
+                <span class="brand-mark">Auto Electrician</span>
+                <span class="brand-name">Constantine · Algeria</span>
+            </div>
+        </div>
+
+        <nav class="header-nav">
+            <button class="nav-icon" id="themeToggle" data-tooltip="Theme" aria-label="Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="nav-icon" id="langToggle" data-tooltip="Language" aria-label="Language">
+                <i class="fa-solid fa-globe"></i>
+            </button>
+            <button class="nav-icon" id="qrBtn" data-tooltip="Share" aria-label="Share">
+                <div class="qr-wave"></div>
+                <div class="qr-wave"></div>
+                <div class="qr-wave"></div>
+                <i class="fa-solid fa-qrcode"></i>
+            </button>
+            <button class="nav-icon" id="logoutBtn" data-tooltip="Reset" aria-label="Reset">
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="portrait">
+            <div class="portrait-frame"></div>
+            <div class="portrait-ring"></div>
+            <div class="portrait-ring-2"></div>
+            <img src="profile.jpg" alt="Ammar Charef" class="portrait-img" width="170" height="170"
+                 onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><defs><linearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22><stop offset=%220%22 stop-color=%22%23e8dec5%22/><stop offset=%221%22 stop-color=%22%23b8935a%22/></linearGradient></defs><rect fill=%22url(%23g)%22 width=%22200%22 height=%22200%22/><path d=%22M 110 40 L 78 100 L 98 100 L 94 152 L 126 92 L 106 92 Z%22 fill=%22%23faf6ec%22 stroke=%22%23faf6ec%22 stroke-width=%221%22 stroke-linejoin=%22round%22/></svg>';">
+        </div>
+
+        <h1 class="name">Ammar <em>Charef</em></h1>
+        <div class="tagline">Available for work</div>
+
+        <div class="links">
+            <a href="https://facebook.com/anonychat.5" class="link link-facebook" data-platform="facebook" target="_blank" rel="noopener">
+                <span class="link-number">01</span>
+                <div class="link-content">
+                    <i class="fa-brands fa-facebook link-icon"></i>
+                    <span class="link-text" data-i18n="facebook">فيسبوك</span>
+                </div>
+                <i class="fa-solid fa-arrow-left link-arrow"></i>
+            </a>
+
+            <a href="https://instagram.com/anonychat.5" class="link link-instagram" data-platform="instagram" target="_blank" rel="noopener">
+                <span class="link-number">02</span>
+                <div class="link-content">
+                    <i class="fa-brands fa-instagram link-icon"></i>
+                    <span class="link-text" data-i18n="instagram">إنستغرام</span>
+                </div>
+                <i class="fa-solid fa-arrow-left link-arrow"></i>
+            </a>
+
+            <a href="https://wa.me/213658161306" class="link link-whatsapp" data-platform="whatsapp" target="_blank" rel="noopener">
+                <span class="link-number">03</span>
+                <div class="link-content">
+                    <i class="fa-brands fa-whatsapp link-icon"></i>
+                    <span class="link-text" data-i18n="whatsapp">واتساب</span>
+                </div>
+                <i class="fa-solid fa-arrow-left link-arrow"></i>
+            </a>
+
+            <a href="https://t.me/anonychatt5" class="link link-telegram" data-platform="telegram" target="_blank" rel="noopener">
+                <span class="link-number">04</span>
+                <div class="link-content">
+                    <i class="fa-brands fa-telegram link-icon"></i>
+                    <span class="link-text" data-i18n="telegram">تيلغرام</span>
+                </div>
+                <i class="fa-solid fa-arrow-left link-arrow"></i>
+            </a>
+
+            <a href="tel:+213658161306" class="link link-phone" data-value="+213658161306">
+                <span class="link-number">05</span>
+                <div class="link-content">
+                    <i class="fa-solid fa-phone link-icon"></i>
+                    <span class="link-text" data-i18n="phone">رقم الهاتف</span>
+                </div>
+                <i class="fa-solid fa-arrow-left link-arrow"></i>
+            </a>
+
+            <a href="mailto:ammarcharef06@gmail.com" class="link" data-value="ammarcharef06@gmail.com">
+                <span class="link-number">06</span>
+                <div class="link-content">
+                    <i class="fa-solid fa-envelope link-icon"></i>
+                    <span class="link-text" data-i18n="gmail">البريد الإلكتروني</span>
+                </div>
+                <i class="fa-solid fa-arrow-left link-arrow"></i>
+            </a>
+
+            <a href="#" class="link" id="contactCard" style="grid-column: 1 / -1;">
+                <span class="link-number">07</span>
+                <div class="link-content">
+                    <i class="fa-solid fa-pen-fancy link-icon"></i>
+                    <span class="link-text" data-i18n="contact">أرسل رسالة مباشرة</span>
+                </div>
+                <i class="fa-solid fa-arrow-left link-arrow"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <span>© <span id="year"></span> · Auto Electrician</span>
+        <span class="footer-center">
+            <span class="footer-sep"></span>
+            <span>Crafted with <i class="fa-solid fa-heart footer-heart"></i></span>
+            <span class="footer-sep"></span>
+        </span>
+        <span id="footerTime">—</span>
+    </footer>
+</div>
+
+<!-- 🌊 الزر الذهبي العائم -->
+<div class="phone-fab" id="phoneFab">
+    <div class="wave-ring" id="waveRing1"></div>
+    <div class="wave-ring" id="waveRing2"></div>
+    <div class="wave-ring" id="waveRing3"></div>
+
+    <div class="phone-fab-actions">
+        <button class="phone-action-btn phone-copy-btn" id="copyFabBtn" aria-label="نسخ الرقم">
+            <i class="fa-regular fa-copy"></i>
+            <span>نسخ</span>
+        </button>
+        <a href="tel:+213658161306" class="phone-action-btn phone-call-btn" aria-label="اتصال">
+            <i class="fa-solid fa-phone"></i>
+            <span>اتصال</span>
+        </a>
+    </div>
+
+    <button class="phone-fab-main" id="phoneFabMain" aria-label="خيارات">
+        <i class="fa-solid fa-phone"></i>
+    </button>
+</div>
+
+<!-- مودال النسخ / QR -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+        <button class="modal-close" id="modalClose" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <i class="fa-solid fa-envelope modal-icon" id="modalIcon"></i>
+        <div class="modal-label" id="modalLabel">Email</div>
+        <div class="modal-value" id="modalValue">—</div>
+        <div class="modal-actions">
+            <button class="modal-btn primary" id="modalCopy">
+                <i class="fa-regular fa-copy"></i>
+                <span>Copy</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- مودال التواصل -->
+<div class="modal-overlay" id="contactModal">
+    <div class="modal-box contact-box">
+        <button class="modal-close" id="contactClose" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="contact-header">
+            <div class="modal-label">Send a message</div>
+            <h2>Get in touch</h2>
+        </div>
+
+        <form id="contactForm" novalidate>
+            <div class="form-field">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-input" id="contactName" placeholder="—" required>
+                <span class="form-error" id="errName">Required</span>
+            </div>
+            <div class="form-field">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" id="contactEmail" placeholder="—" required>
+                <span class="form-error" id="errEmail">Valid email required</span>
+            </div>
+            <div class="form-field">
+                <label class="form-label">Subject</label>
+                <input type="text" class="form-input" id="contactSubject" placeholder="—" required>
+                <span class="form-error" id="errSubject">Required</span>
+            </div>
+            <div class="form-field">
+                <label class="form-label">Message</label>
+                <textarea class="form-textarea" id="contactMessage" placeholder="—" required></textarea>
+                <span class="form-error" id="errMessage">Required</span>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span>Send Message</span>
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ✨ شاشة الانتقال السينمائي -->
+<div class="transition-screen" id="transitionScreen">
+    <div class="transition-bg" id="transitionBg"></div>
+    <div class="transition-content">
+        <div class="transition-icon">
+            <i class="fa-brands fa-facebook-f" id="transitionIconInner"></i>
+        </div>
+        <div class="transition-name" id="transitionName">FACEBOOK</div>
+        <div class="transition-status">
+            <span class="loading-dot"></span>
+            <span class="loading-dot"></span>
+            <span class="loading-dot"></span>
+            <span>Redirecting</span>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastText">Done</span>
+</div>
+
+<script>
+/* ============================================================
+   الإعدادات
+   ============================================================ */
+const CONFIG = {
+    emailjs: {
+        publicKey: 'ckJNQywZ_XFEpqL2w',
+        serviceId: 'service_jsov96m',
+        templateId: 'template_b24ukh5',
+        enabled: true
+    }
+};
+
+const I18N = {
+    ar: {
+        facebook:'فيسبوك', instagram:'إنستغرام', whatsapp:'واتساب',
+        telegram:'تيلغرام', phone:'رقم الهاتف', gmail:'البريد الإلكتروني',
+        contact:'أرسل رسالة مباشرة',
+        copied:'تم النسخ بنجاح'
+    },
+    en: {
+        facebook:'Facebook', instagram:'Instagram', whatsapp:'WhatsApp',
+        telegram:'Telegram', phone:'Phone', gmail:'Email',
+        contact:'Send a message',
+        copied:'Copied successfully'
+    }
+};
+
+const $  = (s) => document.querySelector(s);
+const $$ = (s) => document.querySelectorAll(s);
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+/* 🚀 كشف الجهاز */
+(function detectDevice() {
+    const ua = navigator.userAgent;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua);
+    const isTablet = /iPad|Tablet/i.test(ua);
+    const isNarrow = window.matchMedia('(max-width: 768px)').matches;
+    const isMobileDevice = isMobile || isTablet || isNarrow;
+
+    document.body.classList.add(isMobileDevice ? 'mobile-mode' : 'desktop-mode');
+    window.__isMobileMode = isMobileDevice;
+})();
+
+/* 🚀 تهيئة EmailJS بدون عرقلة */
+function initEmailJS() {
+    if (window.emailjs && CONFIG.emailjs.enabled) {
+        try {
+            emailjs.init({ publicKey: CONFIG.emailjs.publicKey });
+        } catch(e) {}
+    }
+}
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEmailJS);
+} else {
+    initEmailJS();
+}
+
+/* 🚀 Web Audio — محسّن */
+const Audio = {
+    ctx: null,
+    ready: false,
+    init() {
+        if (this.ctx) return;
+        try {
+            this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+            this.ready = true;
+        } catch(e) {}
+    },
+    click() {
+        if (!this.ctx) return;
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+        const o = this.ctx.createOscillator();
+        const g = this.ctx.createGain();
+        o.type = 'sine';
+        o.frequency.setValueAtTime(1100, this.ctx.currentTime);
+        o.frequency.exponentialRampToValueAtTime(650, this.ctx.currentTime + 0.05);
+        g.gain.setValueAtTime(0.025, this.ctx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.08);
+        o.connect(g); g.connect(this.ctx.destination);
+        o.start(); o.stop(this.ctx.currentTime + 0.1);
+    },
+    enter() {
+        if (!this.ctx) return;
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+        [523.25, 659.25, 783.99].forEach((freq, i) => {
+            const o = this.ctx.createOscillator();
+            const g = this.ctx.createGain();
+            o.type = 'sine';
+            o.frequency.value = freq;
+            const start = this.ctx.currentTime + i * 0.08;
+            g.gain.setValueAtTime(0, start);
+            g.gain.linearRampToValueAtTime(0.035, start + 0.02);
+            g.gain.exponentialRampToValueAtTime(0.0001, start + 0.55);
+            o.connect(g); g.connect(this.ctx.destination);
+            o.start(start); o.stop(start + 0.6);
+        });
+    }
+};
+
+/* 🚀 الجزيئات الذهبية — مخففة للأداء */
+(function initGoldParticles() {
+    const container = $('#goldParticles');
+    if (!container) return;
+    const count = isTouchDevice ? 10 : 20;
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'gold-particle';
+        p.style.left = (Math.random() * 100) + '%';
+        p.style.bottom = '-10px';
+        p.style.animationDuration = (10 + Math.random() * 12) + 's';
+        p.style.animationDelay = (Math.random() * 10) + 's';
+        const size = 1 + Math.random() * 1.5;
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        frag.appendChild(p);
+    }
+    container.appendChild(frag);
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   🎯 شاشة الدخول — زر "تابع" الوحيد
+   ═══════════════════════════════════════════════════════════ */
+(function initEntry() {
+    const screen = $('#entryScreen');
+    const button = $('#followButton');
+    const main = $('#mainScreen');
+
+    let entered = false;
+
+    function enter() {
+        if (entered) return;
+        entered = true;
+
+        Audio.init();
+        Audio.enter();
+
+        button.classList.add('wave-active');
+        if (navigator.vibrate) navigator.vibrate(20);
+
+        setTimeout(() => {
+            screen.classList.add('fading');
+            setTimeout(() => main.classList.add('revealing'), 350);
+            setTimeout(() => {
+                screen.style.display = 'none';
+                initMainApp();
+            }, 1200);
+        }, 350);
+    }
+
+    button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        enter();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !entered) enter();
+    });
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   التطبيق الرئيسي
+   ═══════════════════════════════════════════════════════════ */
+function initMainApp() {
+    $('#year').textContent = new Date().getFullYear();
+    initTheme();
+    initLang();
+    initCopyModal();
+    initContact();
+    initPhoneFab();
+    initToolbar();
+    initKeyboardShortcuts();
+    initFooterClock();
+    initTransitionScreen();
+    initSocialLinks();
+}
+
+function initFooterClock() {
+    const el = $('#footerTime');
+    if (!el) return;
+    function update() {
+        const now = new Date();
+        const pad = n => String(n).padStart(2, '0');
+        el.textContent = pad(now.getHours()) + ':' + pad(now.getMinutes());
+    }
+    update();
+    setInterval(update, 60000);
+}
+
+function initTheme() {
+    const saved = localStorage.getItem('theme') || 'light';
+    if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    updateIcon(saved);
+
+    $('#themeToggle').addEventListener('click', (e) => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = cur === 'light' ? 'dark' : 'light';
+        if (next === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+        localStorage.setItem('theme', next);
+        updateIcon(next);
+        Audio.click();
+
+        const btn = e.currentTarget;
+        btn.classList.remove('theme-shine');
+        void btn.offsetWidth;
+        btn.classList.add('theme-shine');
+        setTimeout(() => btn.classList.remove('theme-shine'), 750);
+    });
+
+    function updateIcon(t) {
+        const i = $('#themeToggle').querySelector('i');
+        i.className = t === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    }
+}
+
+function initLang() {
+    let lang = localStorage.getItem('lang');
+    if (lang !== 'ar' && lang !== 'en') lang = 'ar';
+    apply(lang);
+
+    $('#langToggle').addEventListener('click', (e) => {
+        lang = lang === 'ar' ? 'en' : 'ar';
+        localStorage.setItem('lang', lang);
+        apply(lang);
+        Audio.click();
+
+        const btn = e.currentTarget;
+        btn.classList.remove('lang-rotate');
+        void btn.offsetWidth;
+        btn.classList.add('lang-rotate');
+        setTimeout(() => btn.classList.remove('lang-rotate'), 650);
+    });
+
+    function apply(l) {
+        document.documentElement.lang = l;
+        document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+        $$('[data-i18n]').forEach(el => {
+            const k = el.getAttribute('data-i18n');
+            if (I18N[l][k]) el.textContent = I18N[l][k];
+        });
+    }
+}
+
+function showToast(msg, isError = false) {
+    const t = $('#toast');
+    $('#toastText').textContent = msg;
+    t.classList.toggle('error', isError);
+    t.querySelector('i').className = isError
+        ? 'fa-solid fa-circle-exclamation'
+        : 'fa-solid fa-circle-check';
+    t.classList.add('show');
+    clearTimeout(t._t);
+    t._t = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+async function copyToClipboard(text) {
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+        } else {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.left = '-999999px';
+            document.body.appendChild(ta);
+            ta.focus(); ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+        }
+        const lang = localStorage.getItem('lang') || 'ar';
+        showToast(I18N[lang].copied);
+        return true;
+    } catch (e) { return false; }
+}
+
+function initCopyModal() {
+    const overlay = $('#modalOverlay');
+    const modalIcon = $('#modalIcon');
+    const modalLabel = $('#modalLabel');
+    const modalValue = $('#modalValue');
+    const modalCopy = $('#modalCopy');
+    const modalClose = $('#modalClose');
+    const modalActions = overlay.querySelector('.modal-actions');
+
+    let currentValue = '';
+
+    $$('.link[data-value]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentValue = link.getAttribute('data-value') || '';
+
+            modalIcon.style.display = 'block';
+            modalLabel.style.display = 'block';
+            modalActions.style.display = 'flex';
+            modalValue.style.padding = '';
+            modalValue.style.background = '';
+            modalValue.style.border = '';
+            modalValue.style.fontFamily = 'var(--font-serif)';
+            modalValue.style.fontStyle = 'italic';
+            modalValue.style.whiteSpace = 'nowrap';
+            modalValue.style.overflow = 'hidden';
+            modalValue.style.direction = 'ltr';
+
+            const iconClass = link.querySelector('i.link-icon').className;
+            modalIcon.className = iconClass;
+            modalIcon.classList.add('modal-icon');
+
+            const isPhone = link.classList.contains('link-phone');
+            modalLabel.textContent = isPhone ? 'Phone' : 'Email';
+            modalValue.textContent = currentValue;
+
+            modalCopy.innerHTML = '<i class="fa-regular fa-copy"></i><span>Copy</span>';
+            modalCopy.onclick = () => {
+                copyToClipboard(currentValue);
+                setTimeout(() => overlay.classList.remove('active'), 600);
+            };
+
+            overlay.classList.add('active');
+            Audio.click();
+        });
+    });
+
+    modalClose.addEventListener('click', () => overlay.classList.remove('active'));
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) overlay.classList.remove('active');
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            overlay.classList.remove('active');
+        }
+    });
+}
+
+function initTransitionScreen() {
+    const screen = $('#transitionScreen');
+    const iconInner = $('#transitionIconInner');
+    const nameEl = $('#transitionName');
+    if (!screen) return;
+
+    window.showPlatformTransition = function(platform, url) {
+        const platforms = {
+            facebook: { name: 'FACEBOOK',  icon: 'fa-brands fa-facebook-f',  delay: 1100 },
+            instagram: { name: 'INSTAGRAM', icon: 'fa-brands fa-instagram',  delay: 1100 },
+            whatsapp: { name: 'WHATSAPP',  icon: 'fa-brands fa-whatsapp',   delay: 1100 },
+            telegram: { name: 'TELEGRAM',  icon: 'fa-brands fa-telegram',   delay: 1100 }
+        };
+
+        const config = platforms[platform];
+        if (!config) {
+            window.open(url, '_blank');
+            return;
+        }
+
+        screen.setAttribute('data-platform', platform);
+        iconInner.className = config.icon;
+        nameEl.textContent = config.name;
+
+        screen.classList.add('active');
+        if (navigator.vibrate) navigator.vibrate(15);
+        Audio.click();
+
+        setTimeout(() => {
+            window.open(url, '_blank');
+            setTimeout(() => {
+                screen.classList.remove('active');
+                setTimeout(() => screen.removeAttribute('data-platform'), 350);
+            }, 250);
+        }, config.delay);
+    };
+}
+
+function initSocialLinks() {
+    const socialCards = [
+        { selector: '.link-facebook',  platform: 'facebook' },
+        { selector: '.link-instagram', platform: 'instagram' },
+        { selector: '.link-whatsapp',  platform: 'whatsapp' },
+        { selector: '.link-telegram',  platform: 'telegram' }
+    ];
+
+    socialCards.forEach(({ selector, platform }) => {
+        const card = document.querySelector(selector);
+        if (!card) return;
+        card.addEventListener('click', (e) => {
+            const url = card.getAttribute('href');
+            if (!url) return;
+            e.preventDefault();
+            e.stopPropagation();
+            window.showPlatformTransition(platform, url);
+        }, true);
+    });
+}
+
+function initPhoneFab() {
+    const fab = $('#phoneFab');
+    const mainBtn = $('#phoneFabMain');
+    const copyBtn = $('#copyFabBtn');
+    if (!fab || !mainBtn || !copyBtn) return;
+
+    const phoneNumber = '+213658161306';
+
+    mainBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        fab.classList.toggle('open');
+        Audio.click();
+        if (navigator.vibrate) navigator.vibrate(10);
+    });
+
+    copyBtn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(phoneNumber);
+            } else {
+                const ta = document.createElement('textarea');
+                ta.value = phoneNumber;
+                ta.style.position = 'fixed';
+                ta.style.left = '-999999px';
+                document.body.appendChild(ta);
+                ta.focus(); ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+            }
+            const lang = localStorage.getItem('lang') || 'ar';
+            showToast(lang === 'ar' ? 'تم نسخ الرقم بنجاح! 📋' : 'Number copied! 📋');
+            setTimeout(() => fab.classList.remove('open'), 350);
+        } catch (err) {
+            showToast('Failed to copy', true);
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!fab.contains(e.target) && fab.classList.contains('open')) {
+            fab.classList.remove('open');
+        }
+    });
+}
+
+function initContact() {
+    const modal = $('#contactModal');
+    const closeBtn = $('#contactClose');
+    const form = $('#contactForm');
+    const submitBtn = $('#submitBtn');
+    const contactCard = $('#contactCard');
+
+    contactCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.add('active');
+        Audio.click();
+        setTimeout(() => $('#contactName').focus(), 350);
+    });
+
+    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+        }
+    });
+
+    function validate() {
+        let ok = true;
+        const name = $('#contactName').value.trim();
+        const email = $('#contactEmail').value.trim();
+        const subject = $('#contactSubject').value.trim();
+        const message = $('#contactMessage').value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!name) { showError('contactName', 'errName'); ok = false; } else hideError('contactName', 'errName');
+        if (!email || !emailRegex.test(email)) { showError('contactEmail', 'errEmail'); ok = false; } else hideError('contactEmail', 'errEmail');
+        if (!subject) { showError('contactSubject', 'errSubject'); ok = false; } else hideError('contactSubject', 'errSubject');
+        if (!message) { showError('contactMessage', 'errMessage'); ok = false; } else hideError('contactMessage', 'errMessage');
+        return ok;
+    }
+
+    function showError(inputId, errId) {
+        $('#' + inputId).classList.add('error');
+        $('#' + errId).classList.add('show');
+    }
+    function hideError(inputId, errId) {
+        $('#' + inputId).classList.remove('error');
+        $('#' + errId).classList.remove('show');
+    }
+
+    ['contactName', 'contactEmail', 'contactSubject', 'contactMessage'].forEach(id => {
+        $('#' + id).addEventListener('input', () => {
+            const errId = 'err' + id.replace('contact', '');
+            $('#' + id).classList.remove('error');
+            $('#' + errId).classList.remove('show');
+        });
+    });
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!validate()) {
+            submitBtn.classList.remove('shake');
+            void submitBtn.offsetWidth;
+            submitBtn.classList.add('shake');
+            setTimeout(() => submitBtn.classList.remove('shake'), 400);
+            return;
+        }
+
+        const name = $('#contactName').value.trim();
+        const email = $('#contactEmail').value.trim();
+        const subject = $('#contactSubject').value.trim();
+        const message = $('#contactMessage').value.trim();
+
+        submitBtn.disabled = true;
+        const originalContent = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<div class="spinner"></div><span>Sending...</span>';
+
+        const data = { name, email, subject, message, to_email: 'ammarcharef06@gmail.com' };
+
+        if (CONFIG.emailjs.enabled && window.emailjs) {
+            try {
+                await emailjs.send(
+                    CONFIG.emailjs.serviceId,
+                    CONFIG.emailjs.templateId,
+                    data,
+                    CONFIG.emailjs.publicKey
+                );
+                success();
+            } catch (err) {
+                console.error('EmailJS Error:', err);
+                showToast('Failed to send', true);
+                submitBtn.innerHTML = originalContent;
+                submitBtn.disabled = false;
+            }
+        } else {
+            fallbackGmail(data);
+        }
+
+        function success() {
+            submitBtn.innerHTML = '<i class="fa-solid fa-check"></i><span>Sent</span>';
+            showToast('Message sent successfully');
+            setTimeout(() => {
+                form.reset();
+                submitBtn.innerHTML = originalContent;
+                submitBtn.disabled = false;
+                modal.classList.remove('active');
+            }, 1800);
+        }
+
+        function fallbackGmail(d) {
+            const mailto = 'mailto:ammarcharef06@gmail.com?subject=' +
+                encodeURIComponent(d.subject) +
+                '&body=' + encodeURIComponent('From: ' + d.name + '\nEmail: ' + d.email + '\n\n' + d.message);
+            window.open(mailto, '_blank');
+            submitBtn.innerHTML = originalContent;
+            submitBtn.disabled = false;
+            showToast('Opening email client');
+            form.reset();
+            modal.classList.remove('active');
+        }
+    });
+}
+
+function initToolbar() {
+    const overlay = $('#modalOverlay');
+    const modalIcon = $('#modalIcon');
+    const modalLabel = $('#modalLabel');
+    const modalValue = $('#modalValue');
+    const modalCopy = $('#modalCopy');
+    const modalActions = overlay.querySelector('.modal-actions');
+    const qrBtn = $('#qrBtn');
+
+    qrBtn.addEventListener('click', (e) => {
+        qrBtn.classList.remove('qr-wave-active');
+        void qrBtn.offsetWidth;
+        qrBtn.classList.add('qr-wave-active');
+        if (navigator.vibrate) navigator.vibrate(10);
+        setTimeout(() => qrBtn.classList.remove('qr-wave-active'), 1000);
+
+        setTimeout(() => {
+            modalIcon.style.display = 'none';
+            modalLabel.style.display = 'none';
+            modalActions.style.display = 'flex';
+
+            const qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' +
+                encodeURIComponent(window.location.href) + '&color=000000&bgcolor=ffffff&qzone=1';
+
+            modalValue.innerHTML =
+                '<div class="qr-wrapper">' +
+                    '<div class="qr-frame">' +
+                        '<img src="' + qrUrl + '" alt="QR Code">' +
+                    '</div>' +
+                    '<div class="qr-caption">' +
+                        'Auto Electrician' +
+                        '<span class="qr-caption-sub">امسح البطاقة</span>' +
+                    '</div>' +
+                '</div>';
+
+            modalValue.style.padding = '0';
+            modalValue.style.background = 'transparent';
+            modalValue.style.border = 'none';
+            modalValue.style.fontFamily = 'inherit';
+            modalValue.style.fontStyle = 'normal';
+            modalValue.style.whiteSpace = 'normal';
+            modalValue.style.overflow = 'visible';
+            modalValue.style.direction = 'ltr';
+
+            modalCopy.innerHTML = '<i class="fa-solid fa-xmark"></i><span>إغلاق</span>';
+            modalCopy.onclick = () => overlay.classList.remove('active');
+
+            overlay.classList.add('active');
+            Audio.click();
+        }, 200);
+    });
+
+    $('#logoutBtn').addEventListener('click', () => {
+        Audio.click();
+        if (!confirm('Reset and reload?')) return;
+        localStorage.clear();
+        sessionStorage.clear();
+        location.reload();
+    });
+}
+
+function initKeyboardShortcuts() {
+    document.addEventListener('keydown', (e) => {
+        if (e.target.matches('input, textarea')) return;
+        if (e.key === 't' || e.key === 'T') $('#themeToggle').click();
+        if (e.key === 'l' || e.key === 'L') $('#langToggle').click();
+    });
+}
+</script>
+
+</body>
+</html>
